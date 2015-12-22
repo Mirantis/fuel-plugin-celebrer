@@ -1,0 +1,7 @@
+attributes:
+  enable_checkbox:
+    type: "checkbox"
+    weight: 25
+    value: true
+    label: "Activate"
+    description: "Use celebrer component"
