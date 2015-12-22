@@ -1,19 +1,11 @@
-- id: fuel-plugin-celebrer
-  type: group
-  condition: "settings:celebrer.enable_checkbox.value == true"
-  role: [fuel-plugin-celebrer]
-  requires: [post_deployment_start]
-  tasks: [deploy_celebrer_agent]
-  parameters:
-    strategy:
-      type: one_by_one
-
 - id: deploy_celebrer_agent
   type: puppet
-  groups: [fuel-plugin-celebrer]
+  condition: "settings:celebrer.enable_checkbox.value == true"
+  role: '*'
   required_for: [post_deployment_end]
   requires: [post_deployment_start]
   parameters:
     puppet_manifest: "puppet/manifests/agent.pp"
     puppet_modules: "puppet/modules"
     timeout: 3600
+    cwd: "/"
