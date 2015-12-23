@@ -2,6 +2,7 @@ if [[ -f "/etc/centos-release" ]];
   then
     yum install createrepo dpkg-devel dpkg-dev rpm rpm-build
   else
+    sudo apt-get update
     sudo apt-get install createrepo rpm dpkg-dev
 fi;
 
