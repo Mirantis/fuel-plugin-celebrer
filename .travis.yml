@@ -3,7 +3,14 @@ language: python
 python:
   - "2.7"
 
+env:
+ global:
+   - secure: "kFfkpHzsUVmtyf7BE6PKuFw5NQvigXgBxJ5uyvqG2lUqumBkkNODG1ceqMAQv4DWRlAEee7sKkmI1o80N4TvPetYDpvYmjPsmEqMgMhkewx8hw27zXCQnNyG7n0ZFwADEYViy48XB2qirbG3Q/+BMUH2iDAYllRgcktyqgbuCnabDjT4LnfeRhvAWZsg5BusLNi7LS6GWa0ozAf0Y4irs8rl3t6BOYiT0ql2kk8WS6ISKnKit9KIeontHDKG9OOxdsLJweUY1jTsjEP7lKLCqNML+LkNPHP8ItNFTvb8vTVnaMr7FEs212NNd8GclqNHNklu5utEHT0n1pq7Md65aF1fdURAOBCQRnXlaefsYdBQ8gOG5ngjDMW2AGpahWp164OtWMYrd95PJ4E5eVkuC9hAzY3yGWt6c9Vk/sP4miJNIWPxHf+gUgmDHex6OooC4D4pUsN1VUtKPEJYC/Xb+hpKrsaD4Qeg7Z0RB81rmo/qwtoAYfVcJNGkdMATYzpF+SAGfksk+iZW2vjRwCxkRbZvMBvuuG7dP30ZeRiWpaFq3jws3jKO+AdkmCXRkpPHgNBIPsfaVWxlxTvPp+t6Aj+g84JXZuas7VaMRfHX0Ap5HDp2QK2ZXgPUpMGfVkOUZ0lk5HOmu4lQn5FaLbGdUdB897Nmb7zhvnIdAgG4uk4="
+
+
 install:
   - pip install fuel-plugin-builder
 
 script: fpb --check .
+after_script:
+  - bash .tavis.sh
