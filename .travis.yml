@@ -6,4 +6,4 @@ python:
 install:
   - pip install fuel-plugin-builder
 
-script: fpb --check .
+script: fpb --check . ; fpb --build .
