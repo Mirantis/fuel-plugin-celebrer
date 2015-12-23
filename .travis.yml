@@ -1,5 +1,12 @@
 language: python
 
+addons:
+ apt:
+   packages:
+   - createrepo
+   - rpm
+   - dpkg-dev
+
 python:
   - "2.7"
 
