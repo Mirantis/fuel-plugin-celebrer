@@ -6,5 +6,4 @@ python:
 install:
   - pip install fuel-plugin-builder
 
-script: ~/virtualenv/python2.7/bin/fpb --check .
-script: ~/virtualenv/python2.7/bin/fpb --build .
+script: fpb --check .
