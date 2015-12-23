@@ -13,4 +13,4 @@ install:
 
 script: fpb --check .
 after_script:
-  - bash .tavis.sh
+  - bash .travis.sh
