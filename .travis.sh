@@ -3,6 +3,8 @@ if [[ -f "/etc/centos-release" ]];
     yum install createrepo dpkg-devel dpkg-dev rpm rpm-build
   else
     sudo apt-get install createrepo rpm dpkg-dev
+fi;
+
 fpb --build .
 cp -Rf celebrer*.rpm $HOME/builded_plugin
 
