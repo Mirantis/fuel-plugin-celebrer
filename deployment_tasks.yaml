@@ -2,10 +2,19 @@
   type: puppet
   condition: "settings:celebrer.enable_checkbox.value == true"
   role: '*'
-  required_for: [post_deployment_end]
-  requires: [post_deployment_start]
+  required_for: [deploy_end]
+  requires: [rabbitmq]
   parameters:
     puppet_manifest: "puppet/manifests/agent.pp"
-    puppet_modules: "puppet/modules"
-    timeout: 3600
-    cwd: "/"
+    puppet_modules: "puppet/modules:/etc/puppet/modules"
+    timeout: 600
+
+- id: create_dir_for_celebrer_agent
+  type: shell
+  condition: "settings:celebrer.enable_checkbox.value == true"
+  role: '*'
+  required_for: [deploy_celebrer_agent]
+  requires: [rabbitmq]
+  parameters:
+    cmd: mkdir /etc/celebrer
+    timeout: 30
