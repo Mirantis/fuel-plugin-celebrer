@@ -1,12 +1,6 @@
 language: python
 
-addons:
- apt:
-   packages:
-   - createrepo
-   - rpm
-   - dpkg-dev
-
+sudo: require
 python:
   - "2.7"
 
