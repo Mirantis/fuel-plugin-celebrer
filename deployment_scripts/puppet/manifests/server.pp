@@ -12,7 +12,7 @@ $db_connection = "mysql://celebrer:${db_password}@127.0.0.1/celebrer?charset=utf
 ###
 
 class { '::celebrer::db':
-  password => $db_password.
+  password => $db_password
 }
 
 class { '::celebrer':
