@@ -48,18 +48,18 @@ class celebrer::agent(
     'oslo_messaging_rabbit/rabbit_port' :      value => $rabbit_port;
   }
 
-  package { 'celebrer-agent':
+  package { 'celebreragent':
     ensure => $package_ensure,
     name   => $::celebrer::params::agent_package_name,
   }
 
-  service { 'celebrer-agent':
+  service { 'celebreragent':
     ensure  => $service_ensure,
     name    => $::celebrer::params::agent_service_name,
     enable  => $enabled,
-    require => Package['celebrer-agent'],
+    require => Package['celebreragent'],
   }
 
-  Celebrer_agent_config<||> ~> Service['celebrer-agent']
-  Package['celebrer-agent'] ~> Service['celebrer-agent']
+  Celebrer_agent_config<||> ~> Service['celebreragent']
+  Package['celebreragent'] ~> Service['celebreragent']
 }

@@ -1,7 +1,7 @@
 attributes:
-  enable_checkbox:
-    type: "checkbox"
-    weight: 25
-    value: true
-    label: "Activate"
-    description: "Use celebrer component"
+  fuel-plugin-celebrer_enable:
+     type: "checkbox"
+     weight: 25
+     value: true
+     label: "Enable coverage collector"
+     descriptrion: "Activate for deploy with Celebrer"
