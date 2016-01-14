@@ -11,11 +11,11 @@ $db_connection = "mysql://celebrer:${db_password}@127.0.0.1/celebrer?charset=utf
 
 ###
 
-class { '::celebrer::db':
+class { 'celebrer::db':
   password => $db_password,
 }
 
-class { '::celebrer':
+class { 'celebrer':
   rabbit_host => $rabbit_host,
   rabbit_port => $rabbit_port,
   rabbit_user => $rabbit_user,
@@ -27,9 +27,9 @@ class { '::celebrer':
   database_connection => $db_connection,
 }
 
-class { '::celebrer::api':
+class { 'celebrer::api':
   host => $bind_host,
   port => $bind_port,
 }
 
-class { '::celebrer::engine': }
+class { 'celebrer::engine': }
