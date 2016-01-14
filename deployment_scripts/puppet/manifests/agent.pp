@@ -4,7 +4,7 @@ $amqp_hosts  = hiera('amqp_hosts')
 
 ###
 
-class { '::celebrer::agent':
+class { 'celebrer::agent':
   rabbit_host => split($amqp_hosts, ','),
   rabbit_port => $amqp_port,
   rabbit_user => $rabbit_hash['user'],
