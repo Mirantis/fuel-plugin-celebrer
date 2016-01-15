@@ -3,7 +3,7 @@
 # Parameters for puppet-celebrer
 #
 class celebrer::params {
-  $dbmanage_command = 'celebrer-db-manage --config-file /etc/celebrer/celebrer.conf upgrade'
+  $dbmanage_command = 'celebrer-db-manage --config-file /etc/celebrer/celebrer.conf'
 
   case $::osfamily {
     'RedHat': {
