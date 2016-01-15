@@ -6,8 +6,6 @@ class celebrer (
   $rabbit_port             = '5672',
   $rabbit_user             = 'guest',
   $rabbit_password         = 'guest',
-  $service_host            = '127.0.0.1',
-  $service_port            = '8080',
   $database_connection     = undef,
   $database_max_retries    = undef,
   $database_idle_timeout   = undef,
@@ -32,9 +30,6 @@ class celebrer (
   celebrer_config {
     'DEFAULT/debug':                          value => $debug;
     'DEFAULT/verbose':                        value => $verbose;
-
-    'DEFAULT/bind_host':                      value => $service_host;
-    'DEFAULT/bind_port':                      value => $service_port;
 
     'oslo_messaging_rabbit/rabbit_userid' :   value => $rabbit_user;
     'oslo_messaging_rabbit/rabbit_password' : value => $rabbit_password;
