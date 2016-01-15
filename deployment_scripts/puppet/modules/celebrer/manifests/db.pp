@@ -5,42 +5,42 @@
 # == Parameters
 #
 # [*database_connection*]
-#   (Optional) Non-sqllite database for celebrer
+#   (Optional) Non-sqllite database for murano
 #   Defaults to 'mysql://celebrer:secrete@localhost:3306/celebrer'
 #
 # [*database_max_retries*]
 #   (Optional) Maximum number of database connection retries during startup.
 #   Set to -1 to specify an infinite retry count.
-#   Defaults to $::os_service_default.
+#   Defaults to 10.
 #
 # [*database_idle_timeout*]
 #   (Optional) Timeout before idle SQL connections are reaped.
-#   Defaults to $::os_service_default.
+#   Defaults to 3600.
 #
 # [*database_retry_interval*]
 #   (optional) Interval between retries of opening a database connection.
-#   Defaults to $::os_service_default.
+#   Defaults to 10.
 #
 # [*database_min_pool_size*]
 #   (optional) Minimum number of SQL connections to keep open in a pool.
-#   Defaults to $::os_service_default.
+#   Defaults to 1.
 #
 # [*database_max_pool_size*]
 #   (optional) Maximum number of SQL connections to keep open in a pool.
-#   Defaults to $::os_service_default.
+#   Defaults to 10.
 #
 # [*database_max_overflow*]
 #   (optional) If set, use this value for max_overflow with sqlalchemy.
-#   Defaults to $::os_service_default.
+#   Defaults to 20.
 #
 class celebrer::db (
   $database_connection     = 'mysql://celebrer:secrete@localhost:3306/celebrer',
-  $database_idle_timeout   = undef,
-  $database_min_pool_size  = undef,
-  $database_max_pool_size  = undef,
-  $database_max_retries    = undef,
-  $database_retry_interval = undef,
-  $database_max_overflow   = undef,
+  $database_idle_timeout   = 3600,
+  $database_min_pool_size  = 1,
+  $database_max_pool_size  = 10,
+  $database_max_retries    = 10,
+  $database_retry_interval = 10,
+  $database_max_overflow   = 20,
 ) {
 
 # NOTE(aderyugin): In order to keep backward compatibility we rely on the pick function
