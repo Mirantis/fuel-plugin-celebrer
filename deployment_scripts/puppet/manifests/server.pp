@@ -75,10 +75,7 @@ class { 'celebrer':
   rabbit_port => $amqp_port,
   rabbit_user => $rabbit_hash['user'],
   rabbit_password => $rabbit_hash['password'],
-  
-  service_host => $bind_host,
-  service_port => $bind_port,
-  
+
   database_connection => $db_connection,
 }
 
