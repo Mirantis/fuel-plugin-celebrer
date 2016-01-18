@@ -20,14 +20,25 @@ if (!$external_lb) {
   $public_virtual_ip   = hiera('public_vip')
   $internal_virtual_ip = hiera('management_vip')
 
-  class { '::openstack::ha::celebrer':
+  # defaults for any haproxy_service within this class
+  Openstack::Ha::Haproxy_service {
     internal_virtual_ip => $internal_virtual_ip,
     ipaddresses         => $ipaddresses,
     public_virtual_ip   => $public_virtual_ip,
     server_names        => $server_names,
-    public_ssl          => $public_ssl,
-    public_ssl_path     => $public_ssl_path,
-    internal_ssl        => $internal_ssl,
-    internal_ssl_path   => $internal_ssl_path,
+    public              => true,
+  }
+
+  openstack::ha::haproxy_service { 'celebrer-api':
+    order                  => '666',
+    listen_port            => 8989,
+    public_ssl             => $public_ssl,
+    public_ssl_path        => $public_ssl_path,
+    internal_ssl           => $internal_ssl,
+    internal_ssl_path      => $internal_ssl_path,
+    require_service        => 'celebrer_api',
+    haproxy_config_options => {
+      'http-request' => 'set-header X-Forwarded-Proto https if { ssl_fc }',
+    },
   }
 }
