@@ -23,7 +23,7 @@
     puppet_modules: puppet/modules/:/etc/puppet/modules
     timeout: 1800
 
-- role: ['primary-controller']
+- role: ['primary-controller', 'controller']
   stage: post_deployment
   type: puppet
   parameters:
