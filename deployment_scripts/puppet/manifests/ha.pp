@@ -7,10 +7,10 @@ $ssl_hash          = hiera_hash('use_ssl', {})
 $public_ssl        = get_ssl_property($ssl_hash, $public_ssl_hash, 'celebrer', 'public', 'usage', false)
 $public_ssl_path   = get_ssl_property($ssl_hash, $public_ssl_hash, 'celebrer', 'public', 'path', [''])
 
-$internal_ssl      = get_ssl_property($ssl_hash, {}, 'glance', 'internal', 'usage', false)
-$internal_ssl_path = get_ssl_property($ssl_hash, {}, 'glance', 'internal', 'path', [''])
+$internal_ssl      = get_ssl_property($ssl_hash, {}, 'celebrer', 'internal', 'usage', false)
+$internal_ssl_path = get_ssl_property($ssl_hash, {}, 'celebrer', 'internal', 'path', [''])
 
-$glances_address_map = get_node_to_ipaddr_map_by_network_role(get_nodes_hash_by_roles($network_metadata, ['primary-controller', 'controller']), 'mgmt/vip')
+$celebrer_address_map = get_node_to_ipaddr_map_by_network_role(get_nodes_hash_by_roles($network_metadata, ['primary-controller', 'controller']), 'mgmt/vip')
 
 $external_lb = hiera('external_lb', false)
 
