@@ -10,8 +10,8 @@ $internal_ssl_path  = get_ssl_property($ssl_hash, {}, 'celebrer', 'internal', 'p
 $external_lb        = hiera('external_lb', false)
 
 if (!$external_lb) {
-  # We temporarily use Murano credentials. Fixme!
-  $celebrer_address_map  = get_node_to_ipaddr_map_by_network_role(hiera_hash('murano_nodes'), 'murano/api')
+  # We temporarily use Glance credentials. Fixme!
+  $celebrer_address_map  = get_node_to_ipaddr_map_by_network_role(hiera_hash('glance_nodes'), 'glance/api')
   $server_names        = hiera_array('celebrer_names', keys($celebrer_address_map))
   $ipaddresses         = hiera_array('celebrer_ipaddresses', values($celebrer_address_map))
   $public_virtual_ip   = hiera('public_vip')
