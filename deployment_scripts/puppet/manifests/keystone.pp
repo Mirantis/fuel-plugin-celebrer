@@ -17,7 +17,7 @@ $admin_protocol    = get_ssl_property($ssl_hash, {}, 'celebrer', 'admin', 'proto
 $admin_address     = get_ssl_property($ssl_hash, {}, 'celebrer', 'admin', 'hostname', [$management_ip])
 
 $api_bind_port     = '8989'
-$tenant            = pick($murano_hash['tenant'], 'services')
+$tenant            = pick($celebrer_hash['tenant'], 'services')
 $public_url        = "${public_protocol}://${public_address}:${api_bind_port}"
 $internal_url      = "${internal_protocol}://${internal_address}:${api_bind_port}"
 $admin_url         = "${admin_protocol}://${admin_address}:${api_bind_port}"
