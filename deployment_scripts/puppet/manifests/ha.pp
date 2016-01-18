@@ -17,17 +17,6 @@ if (!$external_lb) {
   $public_virtual_ip   = hiera('public_vip')
   $internal_virtual_ip = hiera('management_vip')
 
-class openstack::ha::celebrer (
-  $internal_virtual_ip,
-  $ipaddresses,
-  $public_virtual_ip,
-  $server_names,
-  $public_ssl        = false,
-  $public_ssl_path   = undef,
-  $internal_ssl      = false,
-  $internal_ssl_path = undef,
-) {
-
   # defaults for any haproxy_service within this class
   Openstack::Ha::Haproxy_service {
     internal_virtual_ip => $internal_virtual_ip,
