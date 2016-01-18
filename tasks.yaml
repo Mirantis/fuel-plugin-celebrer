@@ -22,3 +22,11 @@
     puppet_manifest: puppet/manifests/keystone.pp
     puppet_modules: puppet/modules/:/etc/puppet/modules
     timeout: 1800
+
+- role: ['primary-controller']
+  stage: post_deployment
+  type: puppet
+  parameters:
+    puppet_manifest: puppet/manifests/ha.pp
+    puppet_modules: puppet/modules/:/etc/puppet/modules
+    timeout: 1800
