@@ -70,6 +70,12 @@ class { 'celebrer::db':
   database_connection => $db_connection,
 }
 
+firewall { '666 celebrer-api' :
+  dport  => 8989,
+  proto  => 'tcp',
+  action => 'accept',
+}
+
 class { 'celebrer':
   rabbit_host => split($amqp_hosts, ','),
   rabbit_port => $amqp_port,
