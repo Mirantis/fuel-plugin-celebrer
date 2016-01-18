@@ -60,7 +60,7 @@
 #    admin_url    => 'https://10.0.0.11:8989',
 #  }
 #
-class murano::keystone::auth(
+class celebrer::keystone::auth(
   $password,
   $service_name        = undef,
   $auth_name           = 'celebrer',
