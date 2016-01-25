@@ -8,10 +8,11 @@ class celebrer::params {
   case $::osfamily {
     'RedHat': {
       # package names
-      $common_package_name = "celebrer-common"
-      $agent_package_name  = "celebrer-agent"
-      $engine_package_name = "celebrer-engine"
-      $api_package_name    = "celebrer-api"
+      $common_package_name       = "celebrer-common"
+      $agent_package_name        = "celebrer-agent"
+      $engine_package_name       = "celebrer-engine"
+      $api_package_name          = "celebrer-api"
+      $pythonclient_package_name = "python-celebrerclient"
       # service names
       $agent_service_name  = "celebrer-agent"
       $engine_service_name = "celebrer-engine"
@@ -19,10 +20,11 @@ class celebrer::params {
     }
     'Debian': {
       # package names
-      $common_package_name = "celebrer-common"
-      $agent_package_name  = "celebrer-agent"
-      $engine_package_name = "celebrer-engine"
-      $api_package_name    = "celebrer-api"
+      $common_package_name       = "celebrer-common"
+      $agent_package_name        = "celebrer-agent"
+      $engine_package_name       = "celebrer-engine"
+      $api_package_name          = "celebrer-api"
+      $pythonclient_package_name = "python-celebrerclient"
       # service names
       $agent_service_name  = "celebrer-agent"
       $engine_service_name = "celebrer-engine"
