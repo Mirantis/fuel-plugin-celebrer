@@ -92,3 +92,4 @@ class { 'celebrer::api':
 
 class { 'celebrer::engine': }
 class { 'celebrer::client': }
+class { 'celebrer::dashboard': }

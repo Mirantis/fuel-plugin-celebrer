@@ -13,6 +13,7 @@ class celebrer::params {
       $engine_package_name       = "celebrer-engine"
       $api_package_name          = "celebrer-api"
       $pythonclient_package_name = "python-celebrerclient"
+      $dashboard_package_name    = "python-celebrer-dashboard"
       # service names
       $agent_service_name  = "celebrer-agent"
       $engine_service_name = "celebrer-engine"
@@ -25,6 +26,7 @@ class celebrer::params {
       $engine_package_name       = "celebrer-engine"
       $api_package_name          = "celebrer-api"
       $pythonclient_package_name = "python-celebrerclient"
+      $dashboard_package_name    = "python-celebrer-dashboard"
       # service names
       $agent_service_name  = "celebrer-agent"
       $engine_service_name = "celebrer-engine"
